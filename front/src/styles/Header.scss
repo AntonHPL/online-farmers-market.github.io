@@ -1,0 +1,29 @@
+.header-container {
+  .logo {
+    @include size($height: 100%);
+    @include flex_center();
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      @include size(auto, calc(64px - 8px));
+    }
+  }
+
+  .account-image {
+    @include size(30px, 30px);
+    border-radius: 50%;
+    overflow: hidden;
+    @include flex_center();
+
+    img {
+      object-fit: cover;
+      min-width: 30px;
+      min-height: 30px;
+    }
+  }
+
+  .profile-button {
+    text-transform: none !important;
+  }
+}

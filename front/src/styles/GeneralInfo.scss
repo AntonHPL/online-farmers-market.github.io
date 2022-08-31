@@ -1,0 +1,61 @@
+.general-info {
+  @include size(700px);
+  @include indents($padding: 8px);
+
+  >div:first-of-type {
+    @include flex_options();
+
+    .image {
+      @include size(88.33px, 88.33px);
+      @include relative();
+      border-radius: 50%;
+      overflow: hidden;
+      @include flex_center();
+
+      img {
+        object-fit: cover;
+        min-width: 88.33px;
+        min-height: 88.33px;
+      }
+    }
+
+    .account-circle {
+      @include size(88.33px);
+    }
+
+    >div {
+      @include flex_options(column, center);
+      @include indents(0 0 0 8px);
+    }
+  }
+
+  >div:last-of-type {
+    @include flex_options($justify_content: space-between);
+    margin-top: 8px;
+
+    .email,
+    .buttons {
+      @include size(calc(50% - 4px));
+    }
+
+    .email {
+      @include flex_options($align_items: center);
+      @include indents($padding: 4px);
+      @include border_box();
+      background-color: $secondary_bright;
+    }
+
+    .buttons {
+      @include flex_options($justify_content: space-between);
+
+      button {
+        width: calc(50% - 4px);
+      }
+    }
+  }
+
+  .backdrop {
+    @include absolute();
+    @include size(100% !important, 100% !important);
+  }
+}

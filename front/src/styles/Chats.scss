@@ -1,0 +1,111 @@
+.chat-container {
+  @include relative();
+  @include flex_options();
+  @include size(calc(300px + 10px + 700px), calc(100vh - 64px - 73.99px - 24px - 20px));
+
+  .backdrop {
+    @include relative();
+    border-radius: 4px;
+    background-color: $secondary_main;
+    @include size(100%, 100%);
+
+    svg {
+      color: $primary_dark;
+    }
+  }
+
+  .skeleton {
+    @include size(300px, 100px);
+    border-radius: 4px;
+    @include indents(0 0 4px);
+  }
+
+  .no-chats-plug {
+    @include border($secondary_dark, 4px);
+  }
+
+  .choose-the-chat-plug,
+  .no-chats-plug {
+    @include size(100%, 100%);
+    @include flex_center();
+
+    div {
+      @include flex_options(column, center, center);
+
+      svg {
+        @include size(20%, 20%);
+      }
+    }
+  }
+}
+
+.chat-and-form {
+  @include flex_options(column, $justify_content: stretch);
+  @include border($secondary_dark, 4px);
+  @include border_box();
+  @include size(700px);
+
+  .chat {
+    @include flex_options(column);
+    @include indents($padding: 0 4px);
+    @include border_box();
+    overflow-y: auto;
+    flex-grow: 1;
+
+    .break {
+      @include flex_options($justify_content: center);
+
+      div {
+        background-color: $secondary_bright;
+        @include size(fit-content, fit-content);
+        @include indents(4px 0, 4px);
+      }
+    }
+
+    .sent-message,
+    .received-message {
+      @include size(fit-content, fit-content);
+      max-width: 300px;
+      @include indents(4px 0, 8px);
+      @include flex_options();
+    }
+
+    .sent-message {
+      background-color: $primary_dark;
+      color: white;
+      align-self: flex-end;
+      border-radius: 8px 8px 0;
+
+      div {
+        text-align: right;
+        margin-left: 8px;
+        font-size: 0.65em;
+        @include flex_options($align_items: flex-end);
+      }
+    }
+
+    .received-message {
+      background-color: #fff;
+      align-self: flex-start;
+      border-radius: 8px 8px 8px 0;
+
+      div {
+        order: -1;
+        margin-right: 8px;
+        font-size: 0.65em;
+        @include flex_options($align_items: flex-end);
+      }
+    }
+  }
+
+  form {
+    @include flex_options($justify_content: space-between, $align_items: center);
+    @include indents($padding: 4px);
+    @include size(100%);
+    @include border_box();
+
+    .form-row {
+      @include size(calc(100% - 40px - 4px));
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.first-message-dialog {
+  .seller-account-image {
+    @include size(45px, 45px);
+    border-radius: 50%;
+    overflow: hidden;
+    @include flex_center();
+    margin-right: 10px;
+
+    img {
+      object-fit: cover;
+      min-width: 45px;
+      min-height: 45px;
+    }
+  }
+
+  .seller-info {
+    @include flex_options($align-items: center);
+    // @include size(100px, 30px);
+  }
+
+  .MuiDialogContent-root {
+    padding-bottom: 0 !important;
+  }
+}

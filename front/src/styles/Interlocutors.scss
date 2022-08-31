@@ -1,0 +1,118 @@
+.interlocutors {
+  margin-right: 10px;
+
+  .interlocutor {
+    @include flex_options($align_items: center);
+    @include size(300px, 100px);
+    @include indents(0 0 4px, 4px);
+    @include border_box();
+    @include relative();
+
+    .images {
+      @include relative();
+      @include size(90px, calc(100px - 5px - 5px));
+
+      .seller-image {
+        @include size(45px, 45px);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        @include border($primary_bright, 50%);
+        @include border_box();
+        overflow: hidden;
+        @include flex_center();
+
+        img {
+          object-fit: cover;
+          min-width: 45px;
+          min-height: 45px;
+        }
+      }
+
+      .account-circle-container {
+        @include border($primary_main, 50%);
+        @include size(45px, 45px);
+        background-color: #fff;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        .account-circle {
+          @include size(45px, 45px);
+        }
+      }
+
+      .ad-image {
+        @include size(80px, 80px);
+        @include border($primary_bright, 4px);
+        overflow: hidden;
+        @include border_box();
+        @include flex_center();
+
+        img {
+          min-width: 90px;
+          min-height: 90px;
+          object-fit: cover;
+        }
+      }
+
+      .no-photography {
+        @include size(45px, 45px);
+      }
+    }
+
+    .sender-info {
+      @include indents(0 0 0 10px);
+
+      h6 {
+        line-height: 1.4 !important;
+      }
+
+      h6:nth-child(2) {
+        font-weight: normal;
+        font-size: 1.125rem;
+        font-style: italic;
+      }
+    }
+
+    &.selected {
+      background: $primary_bright;
+
+      .seller-image,
+      .ad-image,
+      .account-circle-container {
+        border: 1px solid #fff !important;
+      }
+    }
+
+    .delete-button {
+      @include absolute(8px, 8px);
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: $primary_dark;
+      color: #fff;
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+
+      .seller-image,
+      .ad-image {
+        border: 1px solid #fff !important;
+      }
+
+      .account-circle-container {
+        background-color: #000;
+        border: 1px solid #fff;
+        color: #fff;
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .delete-button {
+        @include absolute(8px, 8px);
+        opacity: 1;
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  }
+}

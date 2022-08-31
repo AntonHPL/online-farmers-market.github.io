@@ -1,0 +1,108 @@
+.ad-container {
+  @include indents($padding: 24px);
+  @include flex_options($justify_content: space-between);
+  flex-wrap: wrap;
+  @include size(900px);
+
+  a {
+    cursor: pointer;
+  }
+  h5,
+  h6 {
+    font-weight: 500;
+  }
+
+  .write-to-the-seller-button {
+    margin-top: 8px;
+  }
+
+  .aside {
+    >div:not(.alert) {
+      background: $secondary_bright;
+      padding: 8px;
+      @include size(calc(400px - 16px));
+      @include border_box();
+
+      &:first-of-type {
+        margin-bottom: 16px;
+      }
+
+      &:nth-of-type(2) {
+        .seller-info {
+          .account {
+            @include flex_options($align-items: center);
+            @include indents(8px 0);
+
+            .image {
+              @include size(45px, 45px);
+              border-radius: 50%;
+              overflow: hidden;
+              @include flex_center();
+              margin-right: 10px;
+
+              img {
+                object-fit: cover;
+                min-width: 45px;
+                min-height: 45px;
+              }
+
+              svg {
+                @include size(100%, 100%)
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .skeleton-aside-top {
+      @include size(calc(400px - 16px), 139.25px);
+      margin-bottom: 16px;
+      border-radius: 4px;
+    }
+
+    .skeleton-aside-bottom {
+      @include size(calc(400px - 16px), 173.51px);
+      border-radius: 4px;
+    }
+
+    >p {
+      text-align: right;
+      @include indents(16px 0 0);
+    }
+
+    .alert {
+      @include size(100%);
+      @include border_box();
+      margin-top: 16px;
+      box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+      background: $secondary_bright;
+      svg {
+        color: $primary_main;
+      }
+    }
+  }
+
+  .description,
+  .questions {
+    background: $secondary_bright;
+    @include indents(16px 0 0, 8px);
+    @include size(100%);
+
+    button:not(.write-to-the-seller-button) {
+      margin: 8px 8px 8px 0;
+    }
+  }
+
+  .skeleton-description {
+    border-radius: 4px;
+    margin-top: 16px;
+    @include size(100%, 72px);
+  }
+
+  .skeleton-questions {
+    border-radius: 4px;
+    margin-top: 16px;
+    @include size(100%, 193px);
+  }
+}

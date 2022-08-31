@@ -1,0 +1,22 @@
+.account-dialog {
+  .MuiDialog-paper {
+    @include size(500px);
+
+    h2 {
+      @include indents($padding: 16px 24px 8px);
+    }
+
+    .dialog-content {
+      padding-top: 8px !important;
+
+      form {
+        @include size(100%);
+      }
+    }
+
+    .backdrop {
+      @include absolute();
+      @include size(100% !important, 100% !important);
+    }
+  }
+}

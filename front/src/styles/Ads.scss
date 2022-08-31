@@ -1,0 +1,66 @@
+.ads-container {
+  @include flex-options($justify_content: space-between);
+  @include indents($padding: 16px 24px 16px 8px);
+  min-height: calc(100vh - 64px);
+  background-color: $secondary_bright;
+  @include border-box();
+
+  .main {
+    @include size(calc(100% - 360px - 8px));
+    @include indents(0 0 0 8px);
+
+    .sorting-and-search {
+      @include flex-options($justify_content: space-between);
+      @include standard-margin-bottom();
+
+      .sorting {
+        @include indents(0 !important, 0 !important);
+        @include size(200px);
+      }
+
+      .search {
+        @include size(calc(100% - 216px), 40px !important);
+      }
+
+      .search-compressed {
+        @include size(calc(100% - 336px), 40px !important);
+      }
+
+      .search,
+      .search-compressed {
+        >div {
+          @include size($height: 100% !important);
+        }
+      }
+
+      .ads-amount {
+        @include size(120px);
+        @include flex_center();
+        @include border($primary-dark, 4px);
+        background: $primary-dark;
+        color: #fff;
+        @include border_box();
+      }
+    }
+
+    .ads {
+      @include relative();
+
+      .skeleton {
+        @include size(100%, 180px);
+        @include standard-margin-bottom();
+        border-radius: 4px;
+      }
+
+      .plug {
+        @include flex-options(column, center, center);
+        @include size(100%, calc(100vh - 64px - 40px - 8px - 8px));
+      }
+    }
+
+    nav {
+      @include flex-center();
+      @include indents(16px 0 0)
+    }
+  }
+}

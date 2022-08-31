@@ -1,0 +1,38 @@
+.image-slider {
+  background: $secondary_bright  !important;
+  @include size(500px, 500px);
+  @include flex_center();
+  overflow: hidden;
+  @include relative();
+
+  .slides {
+    @include size(100%, 500px);
+    @include flex_options();
+
+    img {
+      @include size(100%, 100%);
+      object-fit: contain;
+    }
+  }
+
+  .buttons {
+    position: absolute;
+    @include flex_options($align_items: center, $justify_content: space-between);
+
+    button {
+      background-color: $secondary_bright  !important;
+      margin: 8px;
+    }
+
+    @include size(100%, 100%)
+  }
+
+  .no-photo {
+    @include size(50%, 50%);
+  }
+}
+
+.skeleton-images {
+  border-radius: 4px;
+  @include size(500px, 500px !important);
+}

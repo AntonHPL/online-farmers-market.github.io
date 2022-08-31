@@ -1,0 +1,43 @@
+.ad-card-container {
+  @include flex-options($isImportant:  !important);
+  @include standard-margin-bottom();
+
+  .card-action-area {
+    @include size(200px !important, 180px !important);
+    background-color: $primary_bright;
+    @include flex-options($justify_content: center);
+    border-radius: 4px;
+    @include indents($padding: 1px);
+
+    img {
+      @include size(100% !important, 100% !important);
+      object-fit: contain;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    svg {
+      @include size(50%, 50%);
+      align-self: center;
+    }
+  }
+
+  .card-content {
+    @include flex-options(column, space-between, $isImportant:  !important);
+    @include size(425px);
+    @include border-box();
+
+    .product-title:hover {
+      cursor: pointer;
+      color: $primary_main;
+      transition: all .2s ease-in-out;
+      width: fit-content;
+    }
+  }
+
+  .card-actions {
+    @include flex-options($justify_content: flex-end, $align_items: flex-end);
+    @include size(calc(100% - 625px));
+    @include border-box();
+  }
+}

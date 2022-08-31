@@ -1,0 +1,41 @@
+@import "./styles/variables/variables.scss",
+"./styles/mixins/mixins.scss",
+"./styles/AccountDialog.scss",
+"./styles/Ad.scss",
+"./styles/AdCard.scss",
+"./styles/Ads.scss",
+"./styles/Captcha.scss",
+"./styles/ChatDeletionDialog.scss",
+"./styles/Chats.scss",
+"./styles/ConfirmationDialog.scss",
+"./styles/FirstMessageDialog.scss",
+"./styles/GeneralInfo.scss",
+"./styles/Header.scss",
+"./styles/ImagesCard.scss",
+"./styles/ImageSlider.scss",
+"./styles/Interlocutors.scss",
+"./styles/LogInForm.scss",
+"./styles/Menu.scss",
+"./styles/MyAds.scss",
+"./styles/NewAd.scss",
+"./styles/NewAdForm.scss",
+"./styles/Profile.scss",
+"./styles/SignUpForm.scss",
+"./styles/SuccessDialog.scss",
+"./styles/other.scss";
+
+@import url($fonts_url);
+
+form {
+  @include flex_options(column);
+  @include size(700px);
+}
+
+h4 {
+  @include size(700px);
+  @include indents($padding: 16px 0 !important);
+}
+
+.css-18lvne8-MuiList-root {
+  @include indents($padding: 0 !important);
+}

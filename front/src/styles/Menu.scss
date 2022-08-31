@@ -1,0 +1,7 @@
+.menu-container {
+  width: 360px;
+
+  .skeleton {
+    @include size($height: calc(48px * 7))
+  }
+}

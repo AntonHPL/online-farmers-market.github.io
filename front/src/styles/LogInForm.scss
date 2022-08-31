@@ -1,0 +1,24 @@
+.log-in-form {
+
+  .form-row,
+  .form-control-label,
+  .alert {
+    @include standard-margin-bottom();
+  }
+
+  .form-control-label {
+    @include size(fit-content);
+
+    span:first-of-type {
+      @include indents($padding: 8px !important)
+    }
+  }
+
+  .prompt {
+    @include indents(16px 0 0);
+
+    a {
+      cursor: pointer;
+    }
+  }
+}

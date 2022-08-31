@@ -1,0 +1,7 @@
+.my-ads-container {
+  .skeleton {
+    @include size(100%, 180px);
+    @include standard-margin-bottom();
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,44 @@
+@mixin flex-options($direction: row, $justify_content: flex-start, $align_items: stretch, $wrap: nowrap, $isImportant: null) {
+  display: flex $isImportant;
+  flex-direction: $direction;
+  justify-content: $justify_content;
+  align-items: $align_items;
+}
+
+@mixin flex-center {
+  @include flex-options($justify_content: center, $align_items: center);
+}
+
+@mixin absolute($top: auto, $right: auto) {
+  position: absolute !important;
+  z-index: 1;
+  top: $top;
+  right: $right;
+}
+
+@mixin relative($isImportant: null) {
+  position: relative $isImportant;
+}
+
+@mixin size($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin indents($margin: 0, $padding: 0) {
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin standard-margin-bottom {
+  margin-bottom: 8px;
+}
+
+@mixin border($color, $radius: 0) {
+  border: 1px solid $color;
+  border-radius: $radius;
+}
+
+@mixin border-box {
+  box-sizing: border-box;
+}

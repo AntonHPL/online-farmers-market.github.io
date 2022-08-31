@@ -1,0 +1,27 @@
+.captcha-container {
+  @include flex_options($justify_content: space-between, $align_items: start);
+  @include indents(8px 0 16px);
+
+  .half-width-field {
+    @include size(calc(50% - 4px));
+
+    @include flex_options($align_items: center);
+
+    // @include size(345px);
+    //   @include indents(0 !important);
+    //   transition: all .3s ease;
+    &:first-of-type {
+      justify-content: space-between;
+    }
+
+    &:last-of-type {
+      div {
+        @include size(100%);
+      }
+    }
+
+    canvas {
+      border-radius: 4px;
+    }
+  }
+}

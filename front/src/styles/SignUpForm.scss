@@ -1,0 +1,15 @@
+.sign-up-form {
+
+  .form-row,
+  .alert {
+    @include standard-margin-bottom();
+  }
+
+  .prompt {
+    @include indents(16px 0 0);
+
+    a {
+      cursor: pointer;
+    }
+  }
+}

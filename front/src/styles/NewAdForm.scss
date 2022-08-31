@@ -1,0 +1,50 @@
+@keyframes opacityAnimation {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.new-ad-form {
+  .form-row {
+    @include indents(0 0 16px !important);
+  }
+
+  .complex-form-row {
+    @include flex-options($justify_content: space-between, $wrap: wrap);
+    @include indents(0 0 16px !important);
+
+    .half-width-field {
+      @include size(345px);
+      @include indents(0 !important);
+      transition: all 250ms ease;
+
+      &:nth-child(2) {
+        animation: opacityAnimation 250ms linear;
+      }
+    }
+
+    .full-width-field {
+      @include indents(0 !important);
+      @include size(100%);
+      transition: all 3s ease-in-out;
+    }
+  }
+
+  .price-block {
+    @include flex-options($justify_content: space-between);
+    @include indents(0 0 16px !important);
+    align-items: top;
+
+    .price-field {
+      @include size(550px);
+    }
+
+    .price-label {
+      @include size($height: 56px);
+    }
+  }
+}
